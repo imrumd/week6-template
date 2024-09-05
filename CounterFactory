@@ -1,0 +1,19 @@
+def counter():
+    count = 0
+
+    def increment():
+        nonlocal count
+        count += 1
+        return count
+    
+    return increment
+
+
+c1 = counter()
+c2 = counter()
+
+print(c1())  # Output: 1
+print(c1())  # Output: 2
+print(c2())  # Output: 1
+print(c2())  # Output: 2
+print(c1())  # Output: 3
